@@ -244,14 +244,14 @@ if configuration["version"] != "dev":
 
 if not build.exists():
     print(f"::warning file={build}::The build.json file is missing")
-
-if (
-    "build_from" in build_configuration
-    and not isinstance(build_configuration["build_from"], str)
-    and set(configuration["arch"]) != set(build_configuration["build_from"])
-):
-    print(f"::error file={build}::Architectures in config and build do not match")
-    exit_code = 1
+else:
+    if (
+        "build_from" in build_configuration
+        and not isinstance(build_configuration["build_from"], str)
+        and set(configuration["arch"]) != set(build_configuration["build_from"])
+    ):
+        print(f"::error file={build}::Architectures in config and build do not match")
+        exit_code = 1
 
 # All good things, come to an end \o/!
 sys.exit(exit_code)

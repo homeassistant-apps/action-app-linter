@@ -243,8 +243,7 @@ if configuration["version"] != "dev":
     exit_code = 1
 
 if not build.exists():
-    print(f"::error file={build}::The build.json file is missing")
-    sys.exit(1)
+    print(f"::warning file={build}::The build.json file is missing")
 
 if (
     "build_from" in build_configuration

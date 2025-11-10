@@ -9,6 +9,11 @@
 
 🚀 Frenck's GitHub Action for linting Home Assistant Add-ons.
 
+## Fork
+
+This fork disables the presence check for a 'build.yaml' or 'build.json' file,
+as this is not necessarily needed.
+
 ## About
 
 This GitHub Action is able to validate/lint Home Assistant Add-on configuration
